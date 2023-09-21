@@ -1,0 +1,24 @@
+2023-09-21 09:07:50,377 - elsapy.elsclient - INFO - Module loaded.
+2023-09-21 09:07:51,097 - elsapy.elsentity - INFO - Module loaded.
+2023-09-21 09:07:51,097 - elsapy.utils - INFO - Module loaded.
+2023-09-21 09:07:51,097 - elsapy.elsprofile - INFO - Module loaded.
+2023-09-21 09:07:51,097 - elsapy.elsdoc - INFO - Module loaded.
+2023-09-21 09:07:51,097 - elsapy.elssearch - INFO - Module loaded.
+2023-09-21 09:08:49,464 - elsapy.elsclient - INFO - Module loaded.
+2023-09-21 09:08:49,961 - elsapy.elsentity - INFO - Module loaded.
+2023-09-21 09:08:49,969 - elsapy.utils - INFO - Module loaded.
+2023-09-21 09:08:49,969 - elsapy.elsprofile - INFO - Module loaded.
+2023-09-21 09:08:49,969 - elsapy.elsdoc - INFO - Module loaded.
+2023-09-21 09:08:49,969 - elsapy.elssearch - INFO - Module loaded.
+2023-09-21 09:09:06,269 - elsapy.elsclient - INFO - Module loaded.
+2023-09-21 09:09:06,767 - elsapy.elsentity - INFO - Module loaded.
+2023-09-21 09:09:06,767 - elsapy.utils - INFO - Module loaded.
+2023-09-21 09:09:06,767 - elsapy.elsprofile - INFO - Module loaded.
+2023-09-21 09:09:06,767 - elsapy.elsdoc - INFO - Module loaded.
+2023-09-21 09:09:06,767 - elsapy.elssearch - INFO - Module loaded.
+2023-09-21 09:09:07,274 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/author/author_id/7004367821
+2023-09-21 09:09:07,704 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/author/author_id/7004367821
+2023-09-21 09:09:07,713 - elsapy.elsentity - INFO - Wrote https://api.elsevier.com/content/author/author_id/7004367821 to file
+2023-09-21 09:09:08,710 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/affiliation/affiliation_id/60101411
+2023-09-21 09:09:09,034 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/affiliation/affiliation_id/60101411
+2023-09-21 09:09:09,051 - elsapy.elsentity - INFO - Wrote https://api.elsevier.com/content/affiliation/affiliation_id/60101411 to file
