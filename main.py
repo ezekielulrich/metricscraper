@@ -41,7 +41,7 @@ for author_name in authors:
         author_result = next(scholarly.search_author(author_name))
         author = scholarly.fill(author_result)
     except StopIteration:
-        print(f"No results for {author}")
+        print(f"No results for {author_name}")
         missing = True
     while (tries < max_tries) and (author['email_domain'] != '@mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu'):
         try:
@@ -50,7 +50,7 @@ for author_name in authors:
             author = scholarly.fill(author_result)
             tries += 1
         except StopIteration:
-            print(f"No results for {author}")
+            print(f"No results for {author_name}")
             missing = True
             pass
 
