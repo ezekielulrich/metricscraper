@@ -43,7 +43,7 @@ for author_name in authors:
     except StopIteration:
         print(f"No results for {author_name}")
         missing = True
-    while (tries < max_tries) and (author['email_domain'] != '@mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu'):
+    while (tries < max_tries) and (author['email_domain'] != '@mit.edu' and author['email_domain'] != 'mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu'):
         try:
             print("Found author of same name not associated with given universities, trying again...")
             author_result = next(scholarly.search_author(author_name))
@@ -58,6 +58,8 @@ for author_name in authors:
 
     affiliation = "Other"
     match(author['email_domain']):
+        case 'mit.edu': 
+            affiliation = "MIT"
         case '@mit.edu': 
             affiliation = "MIT"
         case '@mtl.mit.edu':
