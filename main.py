@@ -54,6 +54,8 @@ for author_name in authors:
             missing = True
             pass
 
+    tries = 0
+
     affiliation = "Other"
     match(author['email_domain']):
         case '@mit.edu': 
