@@ -1,7 +1,7 @@
 import requests
 
 def get_author_publications(last, first, university, api_key):
-    url = f"http://api.elsevier.com/content/search/author"
+    url = f'https://api.elsevier.com/metrics/metrics?metrics=ScholarlyOutput%2CCitedPublications&authors=6701858763%2C20433296900&yearRange=5yrs&includeSelfCitations=true&byYear=true&includedDocs=AllPublicationTypes&journalImpactType=CiteScore&showAsFieldWeighted=false&indexType=hIndex'
 
     headers = {
         "X-ELS-APIKey": api_key,
@@ -9,7 +9,7 @@ def get_author_publications(last, first, university, api_key):
     }
 
     params = {
-        "query" : 'AFFIL%28{university}%29+AND+SUBJAREA%28MATE%29',
+        "query" : '',
         "count" : 100
     }
 
@@ -41,7 +41,7 @@ def calculate_h_index(publications):
 
     return h_index
 
-api_key = 'a73b018eefad1357d06592f99c9af9ad'
+api_key = '84373796f32936169439fc00d3d3857a'
 names = [["Albert", "Einstein"]]
 universities = ["Institute for Advanced Studies"]
 
