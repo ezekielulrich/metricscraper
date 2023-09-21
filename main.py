@@ -20,6 +20,7 @@ missing = False
 missingstr = f"""One or more names returned no results. 
 A common reason is the publishing name and name provided in {file_path} differ. 
 Try searching Google Scholar manually to find publishing name."""
+tries = 0
 
 def hindex(pubs):
     citations = [pub['num_citations'] for pub in pubs if 'num_citations' in pub]
@@ -37,11 +38,12 @@ for author_name in authors:
     print(f"Searching for information on {author_name}")
     author_result = next(scholarly.search_author(author_name))
     author = scholarly.fill(author_result)
-    while author['email_domain'] != '@mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu':
+    while (tries < 10) and (author['email_domain'] != '@mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu'):
         try:
             print("Found author of same name not associated with given universities, trying again...")
             author_result = next(scholarly.search_author(author_name))
             author = scholarly.fill(author_result)
+            tries += 1
         except StopIteration:
             print(f"No results for {author}")
             missing = True
