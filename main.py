@@ -1,7 +1,7 @@
 import requests
 
-def get_author_publications(author_name, api_key):
-    base_url = "https://api.elsevier.com/content/search/scopus"
+def get_author_publications(last, first, university, api_key):
+    url = f"http://api.elsevier.com/content/search/author"
 
     headers = {
         "X-ELS-APIKey": api_key,
@@ -9,14 +9,18 @@ def get_author_publications(author_name, api_key):
     }
 
     params = {
-        "query": f"AU-ID(au-name({author_name}))",
-        "count": 100
+        "query" : 'AFFIL%28university%29',
+        "count" : 100
     }
 
-    response = requests.get(base_url, headers=headers, params=params)
+    response = requests.get(url, headers=headers, params=params)
+    #debug printing
+    print(response.url)
+    print(response.headers)
 
     if response.status_code == 200:
         data = response.json()
+        print(data)
         if data.get('search-results'):
             return data['search-results']['entry']
         else:
@@ -37,11 +41,11 @@ def calculate_h_index(publications):
 
     return h_index
 
-# Replace 'YOUR_API_KEY' with your actual API key from Scopus
 api_key = 'a73b018eefad1357d06592f99c9af9ad'
-author_names = ["Albert Einstein"]
+names = [["Albert", "Einstein"]]
+universities = ["Institute for Advanced Studies"]
 
-for author_name in author_names:
-    publications = get_author_publications(author_name, api_key)
+for name in names:
+    publications = get_author_publications(name[1], name[0], "Institute for Advanced Studies", api_key)
     h_index = calculate_h_index(publications)
-    print(f"{author_name}: h-index = {h_index}")
+    print(f"{name[1], name[0]}: h-index = {h_index}")
