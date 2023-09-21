@@ -37,8 +37,9 @@ for author_name in authors:
     print(f"Searching for information on {author_name}")
     author_result = next(scholarly.search_author(author_name))
     author = scholarly.fill(author_result)
-    while author['email_domain'] != 'mit.edu' or '@mtl.mit.edu' or 'umich.edu' or 'northwestern.edu' or 'gatech.edu' or 'stanford.edu' or 'illinois.edu':
+    while author['email_domain'] != '@mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu':
         try:
+            print("Found author of same name not associated with given universities, trying again...")
             author_result = next(scholarly.search_author(author_name))
             author = scholarly.fill(author_result)
         except StopIteration:
@@ -52,15 +53,15 @@ for author_name in authors:
             affiliation = "MIT"
         case '@mtl.mit.edu':
             affiliation = "MIT"
-        case 'umich.edu':
-            affiliation = "University of Michigan"
-        case 'northwestern.edu':
+        case '@umich.edu':
+            affiliation = "UMichigan"
+        case '@northwestern.edu':
             affiliation = "Northwestern"
-        case 'gatech.edu':
+        case '@gatech.edu':
             affiliation = "Georgia Tech"
-        case 'stanford.edu':
+        case '@stanford.edu':
             affiliation = "Stanford"
-        case 'illinois.edu':
+        case '@illinois.edu':
             affiliation = "UIUC"
 
     results.append({'Author': author['name'], 'Affiliation': affiliation, 'Citations' : author['citedby'], 'H-index': hindex(author['publications'])})
