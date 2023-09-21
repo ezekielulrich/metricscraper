@@ -46,6 +46,8 @@ for author in authors:
     match(author['email_domain']):
         case '@mit.edu': 
             affiliation = "MIT"
+        case '@mtl.mit.edu':
+            affiliation = "MIT"
         case 'umich.edu':
             affiliation = "University of Michigan"
         case 'northwestern.edu':
