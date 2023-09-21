@@ -42,6 +42,7 @@ for author_name in authors:
         author = scholarly.fill(author_result)
     except StopIteration:
         print(f"No results for {author}")
+        missing = True
     while (tries < max_tries) and (author['email_domain'] != '@mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu'):
         try:
             print("Found author of same name not associated with given universities, trying again...")
