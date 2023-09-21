@@ -33,15 +33,19 @@ def hindex(pubs):
 
     return h_index
 
-for author in authors:
-    try:
-        author_result = next(scholarly.search_author(author))
-    except StopIteration:
-        print(f"No results for {author}")
-        missing = True
-        pass
-
+for author_name in authors:
+    print(f"Searching for information on {author_name}")
+    author_result = next(scholarly.search_author(author_name))
     author = scholarly.fill(author_result)
+    while author['email_domain'] != 'mit.edu' or '@mtl.mit.edu' or 'umich.edu' or 'northwestern.edu' or 'gatech.edu' or 'stanford.edu' or 'illinois.edu':
+        try:
+            author_result = next(scholarly.search_author(author_name))
+            author = scholarly.fill(author_result)
+        except StopIteration:
+            print(f"No results for {author}")
+            missing = True
+            pass
+
     affiliation = "Other"
     match(author['email_domain']):
         case '@mit.edu': 
