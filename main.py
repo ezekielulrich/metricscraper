@@ -1,51 +1,85 @@
+'''
+ChatGPT generated this, probably full of errors :(
+Debug time
+'''
+
 import requests
 
-def get_author_publications(last, first, university, api_key):
-    url = f"http://api.elsevier.com/content/search/author"
+api_key = '180146437ac53bfedb19d7421867592364e296a2'
 
-    headers = {
-        "X-ELS-APIKey": api_key,
-        "Accept": "application/json"
+# Define your search query
+search_query = 'AU=(Associate Professor OR Professor) AND AD=Massachusetts Institute of Technology AND WC=(Manufacturing Engineering)'
+
+api_url = 'https://api.clarivate.com/api/wos/'
+
+headers = {
+    'X-ApiKey': api_key,
+    'Content-Type': 'application/json'
+}
+
+# Perform a search to retrieve author data
+def search_author_data(query):
+    payload = {
+        "databaseId": "WOS",
+        "usrQuery": query,
+        "queryLanguage": "en",
+        "count": 100,  # Adjust as needed
+        "firstRecord": 1,
+        "fields": [
+            {
+                "name": "Relevance",
+                "sort": "D"
+            }
+        ]
     }
+   
+    response = requests.post(api_url + 'search/query', json=payload, headers=headers)
+    return response.json()
 
-    params = {
-        "query" : 'AFFIL%28university%29',
-        "count" : 100
+# Get the h-index for a given author
+def get_h_index(author_id):
+    payload = {
+        "databaseId": "WOS",
+        "idType": "eid",
+        "retrieveParameters": {
+            "count": 100,
+            "firstRecord": 1,
+            "fields": [
+                {
+                    "name": "D",
+                    "sort": "D"
+                }
+            ]
+        }
     }
-
-    response = requests.get(url, headers=headers, params=params)
-    #debug printing
-    print(response.url)
-    print(response.headers)
-
-    if response.status_code == 200:
-        data = response.json()
-        print(data)
-        if data.get('search-results'):
-            return data['search-results']['entry']
-        else:
-            return []
-    else:
-        return []
-
-def calculate_h_index(publications):
-    citations = [pub['citedby-count'] for pub in publications if 'citedby-count' in pub]
-    citations.sort(reverse=True)
-
-    h_index = 0
-    for i, citation_count in enumerate(citations, start=1):
-        if i <= citation_count:
-            h_index = i
-        else:
-            break
-
+   
+    response = requests.get(api_url + f'retrieve/author/{author_id}', params=payload, headers=headers)
+    print("Response:", response)
+    author_data = response.json()
+   
+    # Extract and return the h-index
+    h_index = author_data['data']['h_index']
     return h_index
 
-api_key = 'a73b018eefad1357d06592f99c9af9ad'
-names = [["Albert", "Einstein"]]
-universities = ["Institute for Advanced Studies"]
+# Main function to collect h-index values
+def main():
+    # Perform the search
+    search_result = search_author_data(search_query)
+   
+    # Extract author data and calculate the average h-index
+    authors = search_result['Data']['Records']
+    h_indexes = []
+   
+    for author in authors:
+        author_id = author['UID']
+        h_index = get_h_index(author_id)
+        h_indexes.append(h_index)
+   
+    # Calculate the average h-index
+    average_h_index = sum(h_indexes) / len(h_indexes)
+   
+    print(f"Total Professors: {len(h_indexes)}")
+    print(f"Average h-index: {average_h_index:.2f}")
 
-for name in names:
-    publications = get_author_publications(name[1], name[0], "Institute for Advanced Studies", api_key)
-    h_index = calculate_h_index(publications)
-    print(f"{name[1], name[0]}: h-index = {h_index}")
+if __name__ == "__main__":
+    main()
