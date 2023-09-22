@@ -35,7 +35,7 @@ def read_names_from_file(file_path):
         print(f"An error occurred: {e}")
         return []
 
-file_path = 'names.txt'
+file_path = 'names.txt' #input("Please enter the path to names.txt: ")
 authors = read_names_from_file(file_path)
 results = []
 missing = False
