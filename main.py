@@ -22,7 +22,7 @@ missingstr = f"""One or more names returned no results.
 A common reason is the publishing name and name provided in {file_path} differ. 
 Try searching Google Scholar manually to find publishing name."""
 tries = 0
-max_tries = 2
+max_tries = 3
 
 def hindex(pubs):
     citations = [pub['num_citations'] for pub in pubs if 'num_citations' in pub]
