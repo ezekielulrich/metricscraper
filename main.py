@@ -39,9 +39,6 @@ file_path = 'names.txt'
 authors = read_names_from_file(file_path)
 results = []
 missing = False
-missingstr = f"""One or more names returned no results. 
-A common reason is the publishing name and name provided in {file_path} differ. 
-Try searching Google Scholar manually to find publishing name."""
 tries = 0
 max_tries = 3
 
@@ -95,11 +92,10 @@ for author_name in authors:
             pass
 
     tries = 0
-    print({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
-    results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
-
-if missing:
-    print(missingstr)
+    if not missing:
+        print({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+        results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+    missing = False
 
 #save as csv
 df = pd.DataFrame(results)
