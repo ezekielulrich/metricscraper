@@ -1,5 +1,6 @@
 from scholarly import scholarly
 import pandas as pd
+import re
 
 def read_names_from_file(file_path):
     try:
@@ -21,7 +22,7 @@ missingstr = f"""One or more names returned no results.
 A common reason is the publishing name and name provided in {file_path} differ. 
 Try searching Google Scholar manually to find publishing name."""
 tries = 0
-max_tries = 5
+max_tries = 2
 
 def hindex(pubs):
     citations = [pub['num_citations'] for pub in pubs if 'num_citations' in pub]
@@ -35,6 +36,40 @@ def hindex(pubs):
 
     return h_index
 
+def ends_with_university_domain(input_string):
+
+    university_patterns = [
+        r".*mit\.edu$",
+        r".*umich\.edu$",
+        r".*gatech\.edu$",
+        r".*illinois\.edu$",
+        r".*stanford\.edu$",
+        r".*northwestern\.edu$"
+    ]
+
+    for pattern in university_patterns:
+        if re.match(pattern, input_string):
+            return True
+
+    return False
+
+def get_affiliation(input_string):
+    if re.match(r".*mit\.edu$", input_string):
+        return 'MIT'
+    elif re.match(r".*umich\.edu$", input_string):
+        return "UMichigan"
+    elif re.match(r".*gatech\.edu$", input_string):
+        return "Georgia Tech"
+    elif re.match(r".*illinois\.edu$", input_string):
+        return "UIUC"
+    elif re.match(r".*stanford\.edu$", input_string):
+        return "Stanford"
+    elif re.match(r".*northwestern\.edu$", input_string):
+        return "Northwestern"
+    else:
+        return "Other"
+
+
 for author_name in authors:
     print(f"Searching for information on {author_name}")
     try:
@@ -45,7 +80,7 @@ for author_name in authors:
         print(f"No results for {author_name}")
         missing = True
     
-    while (tries < max_tries) and (author['email_domain'] != '@mit.edu' and author['email_domain'] != 'mit.edu' and author['email_domain'] != '@mtl.mit.edu' and author['email_domain'] != '@umich.edu' and author['email_domain'] != '@northwestern.edu' and author['email_domain'] != '@gatech.edu' and author['email_domain'] != '@stanford.edu' and author['email_domain'] != '@illinois.edu'):
+    while tries < max_tries and not ends_with_university_domain(author['email_domain']):
         try:
             tries += 1
             print("Found author of same name not associated with given universities, trying again...")
@@ -57,27 +92,7 @@ for author_name in authors:
             pass
 
     tries = 0
-
-    affiliation = "Other"
-    match(author['email_domain']):
-        case 'mit.edu': 
-            affiliation = "MIT"
-        case '@mit.edu': 
-            affiliation = "MIT"
-        case '@mtl.mit.edu':
-            affiliation = "MIT"
-        case '@umich.edu':
-            affiliation = "UMichigan"
-        case '@northwestern.edu':
-            affiliation = "Northwestern"
-        case '@gatech.edu':
-            affiliation = "Georgia Tech"
-        case '@stanford.edu':
-            affiliation = "Stanford"
-        case '@illinois.edu':
-            affiliation = "UIUC"
-
-    results.append({'Author': author['name'], 'Affiliation': affiliation, 'Citations' : author['citedby'], 'H-index': hindex(author['publications'])})
+    results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': hindex(author['publications'])})
 
 if missing:
     print(missingstr)
