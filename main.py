@@ -1,9 +1,23 @@
 '''
 This code could be optimized by using scholarly.search_author_by_organization() instead. Perhaps 
 this could be used in conjunction with scholarly.search_keyword('Manufacturing' OR ...) to find
-all professors associated with manufacturing at a given university
+all professors associated with manufacturing at a given university. 
+Additionally, the sections kword in fill can be used to get only the data we are interested in. 
+This means calculating the h-index by hand is uneeded
 '''
+'''
+def hindex(pubs):
+    citations = [pub['num_citations'] for pub in pubs if 'num_citations' in pub]
 
+    h_index = 0
+    for i, citation_count in enumerate(citations, start=1):
+        if i <= citation_count:
+            h_index = i
+        else:
+            break
+
+    return h_index
+'''
 
 from scholarly import scholarly
 import pandas as pd
@@ -30,18 +44,6 @@ A common reason is the publishing name and name provided in {file_path} differ.
 Try searching Google Scholar manually to find publishing name."""
 tries = 0
 max_tries = 3
-
-def hindex(pubs):
-    citations = [pub['num_citations'] for pub in pubs if 'num_citations' in pub]
-
-    h_index = 0
-    for i, citation_count in enumerate(citations, start=1):
-        if i <= citation_count:
-            h_index = i
-        else:
-            break
-
-    return h_index
 
 def ends_with_university_domain(input_string):
 
@@ -79,27 +81,22 @@ def get_affiliation(input_string):
 
 for author_name in authors:
     print(f"Searching for information on {author_name}")
-    try:
-        tries += 1
-        author_result = next(scholarly.search_author(author_name))
-        author = scholarly.fill(author_result)
-    except StopIteration:
-        print(f"No results for {author_name}")
-        missing = True
-    
-    while tries < max_tries and not ends_with_university_domain(author['email_domain']):
+
+    email = ""
+    while tries < max_tries and not ends_with_university_domain(email):
         try:
             tries += 1
-            print("Found author of same name not associated with given universities, trying again...")
             author_result = next(scholarly.search_author(author_name))
-            author = scholarly.fill(author_result)
+            author = scholarly.fill(author_result, sections=['basics', 'indices'])
+            email = author['email_domain']
         except StopIteration:
-            print(f"No results for {author_name}")
+            print(f"No results for {author_name}, trying again")
             missing = True
             pass
 
     tries = 0
-    results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': hindex(author['publications'])})
+    print({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+    results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
 
 if missing:
     print(missingstr)
