@@ -78,7 +78,6 @@ def get_affiliation(input_string):
 
 for author_name in authors:
     print(f"Searching for information on {author_name}")
-
     email = ""
     while tries < max_tries and not ends_with_university_domain(email):
         try:
@@ -92,7 +91,7 @@ for author_name in authors:
             pass
 
     tries = 0
-    if not missing:
+    if not missing and ends_with_university_domain(email):
         print({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
         results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
     missing = False
