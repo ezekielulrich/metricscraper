@@ -1,3 +1,10 @@
+'''
+This code could be optimized by using scholarly.search_author_by_organization() instead. Perhaps 
+this could be used in conjunction with scholarly.search_keyword('Manufacturing' OR ...) to find
+all professors associated with manufacturing at a given university
+'''
+
+
 from scholarly import scholarly
 import pandas as pd
 import re
