@@ -70,7 +70,3 @@ Searching for information on Adrian Lew
 ## License
 
 [MIT License](LICENSE)
-
----
-
-Replace the placeholders with your actual project information. Make sure to include a license file (in this case, `LICENSE`) in your project directory. The license file should contain the text of the license you choose for your project.
