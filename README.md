@@ -8,8 +8,6 @@ This Python program allows you to retrieve the h-index of researchers from Googl
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#example)
-- [Disclaimer](#disclaimer)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Requirements
