@@ -1,6 +1,6 @@
 # Citation Metrics Scraper
 
-This Python program allows you to retrieve the h-index of researchers from Google Scholar using a list of names.
+This Python program allows you to retrieve and compile the h-index of researchers from given universities. 
 
 ## Table of Contents
 
