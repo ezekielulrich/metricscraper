@@ -39,22 +39,18 @@ cd metricscraper
 
 ## Usage
 
-1. Add the names you want to search for to the `names.txt` file.
-
-2. Run the program:
+1. Run the program:
 
 ```bash
 python main.py
 ```
 
-The program will search Google Scholar for each name and find their corresponding h-index, university, and citation count.
+The program will search Google Scholar for authors from each university whose interests are associated with manufacturing and retrieve their corresponding h-index, university, and citation count.
 
 ## Example
 
-```txt
-A. John Hart
-Aaron Stebner
-Adrian Lew
+```bash
+python main.py
 ```
 
 Output:
@@ -65,6 +61,7 @@ Searching for information on Aaron Stebner
 {'Author': 'Aaron Stebner', 'Affiliation': 'Georgia Tech', 'Citations': 2520, 'H-index': 26}
 Searching for information on Adrian Lew
 {'Author': 'Adrian Lew', 'Affiliation': 'Stanford', 'Citations': 3330, 'H-index': 28}
+...
 ```
 
 ## License
