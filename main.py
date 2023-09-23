@@ -91,7 +91,7 @@ def main():
         try:
             author_result = next(scholarly.search_author(author_name))
             author = scholarly.fill(author_result, sections=['basics', 'indices'])
-            print({'Author': author['name'], 'Affiliation': author['email_domain'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+            print({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
             results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
         except:
             print(f"Something went wrong searching for {author_name}")
