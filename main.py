@@ -42,8 +42,26 @@ def main():
 
     print('Finding university IDs...')
     universities = ['MIT', 'University of Michigan', 'Georgia Tech', 'University of Illinois at Urbana-Champaign', 'Stanford', 'Northwestern University']
-    keywords = ['manufacturing', 'supply chains', 'manufacturing systems', 'supply chain management', 'mechanical engineering', 'Manufacturing', 'Supply Chains', 'Manufacturing Systems', 'Supply Chain Management', 'Mechanical Engineering'
-]
+    keywords = [
+        "lithography", "material deposition", "low-dimensional material", 
+        "thin-film deposition", "nanomaterial synthesis", "nanofabrication", 
+        "materials characterization", "nanocomposite", "material testing", 
+        "sintering", "crystal growth", "materials synthesis", "composite materials", 
+        "nanostructure", "materials processing", "microfabrication", "surface coating", 
+        "metallurgy", "polymer processing", "additive manufacturing", "3d printing", 
+        "chemical vapor deposition", "electrospinning", "sol-gel synthesis", 
+        "thermal analysis", "x-ray diffraction", "electron microscopy", "nanoparticles", 
+        "nanotubes", "nanowires", "biomaterials", "nanoengineering", "nanopatterning", 
+        "quantum dots", "photolithography", "spin coating", "photovoltaic materials", 
+        "dielectric material", "nanolithography", "nanoprocessing", "nanomanufacturing", 
+        "nanotechnology", "biomimetic material", "smart material", "nanosensor", 
+        "nanostructured polymers", "bioinspired materials", "metamaterials", 
+        "nanoindentation", "nanorobotics", "nanotribology", "nanomechanics", 
+        "nanophotonics", "nanoelectronics", "microfluidics", "nanofluidics"
+    ]
+    keycaps = [keyword.capitalize() for keyword in keywords]
+    keywords = keywords + keycaps
+
     IDs = [scholarly.search_org(uni)[0]['id'] for uni in universities]
     authors = []
     results = []
