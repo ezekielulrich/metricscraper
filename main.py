@@ -71,6 +71,7 @@ def main():
             query = scholarly.search_author_by_organization(int(ID))
             while True:
                 author = next(query)
+                print(f"Checking if {author['name']} is associated with keywords")
                 if have_common_elements(author['interests'], keywords):
                     authors.append(author['name'])
                     print(f"Added {author['name']} to list of names")
