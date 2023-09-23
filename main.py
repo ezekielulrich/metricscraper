@@ -2,6 +2,7 @@
 Make an option to search via keyword
 Make an option to specify universities
 Use LLM to make additional search terms after user puts in their own
+Need to find a way to select only professors and associate professors
 '''
 
 from scholarly import scholarly
@@ -16,17 +17,17 @@ def have_common_elements(list1, list2):
 
 
 def get_affiliation(input_string):
-    if re.match(r".*mit\.edu$", input_string):
+    if re.match(r".*mit\.edu$", input_string, re.IGNORECASE):
         return 'MIT'
-    elif re.match(r".*umich\.edu$", input_string):
+    elif re.match(r".*umich\.edu$", input_string, re.IGNORECASE):
         return "UMichigan"
-    elif re.match(r".*gatech\.edu$", input_string):
+    elif re.match(r".*gatech\.edu$", input_string, re.IGNORECASE):
         return "Georgia Tech"
-    elif re.match(r".*illinois\.edu$", input_string):
+    elif re.match(r".*illinois\.edu$", input_string, re.IGNORECASE):
         return "UIUC"
-    elif re.match(r".*stanford\.edu$", input_string):
+    elif re.match(r".*stanford\.edu$", input_string, re.IGNORECASE):
         return "Stanford"
-    elif re.match(r".*northwestern\.edu$", input_string):
+    elif re.match(r".*northwestern\.edu$", input_string, re.IGNORECASE):
         return "Northwestern"
     else:
         return "Other"
@@ -65,8 +66,6 @@ def main():
     IDs = [scholarly.search_org(uni)[0]['id'] for uni in universities]
     authors = []
     results = []
-    tries = 0
-    max_tries = 3
 
     # get all authors associated with keywords from a university
 
@@ -88,16 +87,14 @@ def main():
 
     for author_name in authors:
         print(f"Searching for {author_name} metrics and interests")
-        while tries < max_tries:
-            tries += 1
-            try:
-                author_result = next(scholarly.search_author(author_name))
-                author = scholarly.fill(author_result, sections=['basics', 'indices'])
-                print({'Author': author['name'], 'Affiliation': author['email_domain'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
-                results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
-            except StopIteration:
-                print(f"No results for {author_name}, trying again")
-                pass
+        try:
+            author_result = next(scholarly.search_author(author_name))
+            author = scholarly.fill(author_result, sections=['basics', 'indices'])
+            print({'Author': author['name'], 'Affiliation': author['email_domain'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+            results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+        except StopIteration:
+            print(f"No results for {author_name}")
+            pass
     
     #save as csv
     print('Saving to metrics.csv')
