@@ -86,7 +86,7 @@ def main():
     # get metrics and append to results
 
     for author_name in authors:
-        print(f"Searching for {author_name} metrics and interests")
+        print(f"Searching for {author_name} metrics")
         try:
             author_result = next(scholarly.search_author(author_name))
             author = scholarly.fill(author_result, sections=['basics', 'indices'])
