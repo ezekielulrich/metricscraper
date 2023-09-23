@@ -55,7 +55,8 @@ def main():
 
     print('Finding university IDs...')
     universities = ['MIT', 'University of Michigan', 'Georgia Tech', 'University of Illinois at Urbana-Champaign', 'Stanford', 'Northwestern University']
-    keywords = ['manufacturing', 'supply chains', 'manufacturing systems', 'supply chain management', 'mechanical engineering']
+    keywords = ['manufacturing', 'supply chains', 'manufacturing systems', 'supply chain management', 'mechanical engineering', 'Manufacturing', 'Supply Chains', 'Manufacturing Systems', 'Supply Chain Management', 'Mechanical Engineering'
+]
     IDs = [scholarly.search_org(uni)[0]['id'] for uni in universities]
     authors = []
     results = []
