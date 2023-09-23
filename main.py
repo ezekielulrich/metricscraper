@@ -51,7 +51,7 @@ def main():
     print(author_result)
     '''
     
-    print('Program is running...')
+    print('Running...')
 
     print('Finding university IDs...')
     universities = ['MIT', 'University of Michigan', 'Georgia Tech', 'University of Illinois at Urbana-Champaign', 'Stanford', 'Northwestern University']
@@ -77,7 +77,7 @@ def main():
         except StopIteration:
             print("Done searching authors")
     
-    # see which authors have keywords as interests and append to results
+    # get metrics and append to results
 
     for author_name in authors:
         print(f"Searching for {author_name} metrics and interests")
