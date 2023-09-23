@@ -3,6 +3,7 @@ Make an option to search via keyword
 Make an option to specify universities
 Use LLM to make additional search terms after user puts in their own
 Need to find a way to select only professors and associate professors - in affiliation, check if affiliation contains substring "professor"
+This will have to be what we do, since manualy checking affiliation incorrectly eliminates some results
 '''
 
 from scholarly import scholarly
@@ -80,7 +81,7 @@ def main():
                 if have_common_elements(author['interests'], keywords):
                     authors.append(author['name'])
                     print(f"Added {author['name']} to list of names")
-        except StopIteration:
+        except:
             print("Done searching authors")
     
     # get metrics and append to results
@@ -92,8 +93,8 @@ def main():
             author = scholarly.fill(author_result, sections=['basics', 'indices'])
             print({'Author': author['name'], 'Affiliation': author['email_domain'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
             results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
-        except StopIteration:
-            print(f"No results for {author_name}")
+        except:
+            print(f"Something went wrong searching for {author_name}")
             pass
     
     #save as csv
