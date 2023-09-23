@@ -68,7 +68,7 @@ def main():
     tries = 0
     max_tries = 3
 
-    # get all authors from a university
+    # get all authors associated with keywords from a university
 
     print('Retrieving authors...')
 
