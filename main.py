@@ -40,8 +40,6 @@ def main():
     
     print('Running...')
 
-    print('Finding university IDs...')
-    universities = ['MIT', 'University of Michigan', 'Georgia Tech', 'University of Illinois at Urbana-Champaign', 'Stanford', 'Northwestern University']
     keywords = [
         "lithography", "material deposition", "low-dimensional material", 
         "thin-film deposition", "nanomaterial synthesis", "nanofabrication", 
@@ -62,6 +60,8 @@ def main():
     keycaps = [keyword.capitalize() for keyword in keywords]
     keywords = keywords + keycaps
 
+    print('Finding university IDs...')
+    universities = ['MIT', 'University of Michigan', 'Georgia Tech', 'University of Illinois at Urbana-Champaign', 'Stanford', 'Northwestern University']
     IDs = [scholarly.search_org(uni)[0]['id'] for uni in universities]
     authors = []
     results = []
