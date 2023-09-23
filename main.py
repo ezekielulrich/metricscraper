@@ -1,19 +1,6 @@
 '''
-This code could be optimized by using scholarly.search_author_by_organization() instead. Perhaps 
-this could be used in conjunction with scholarly.search_keyword('Manufacturing' OR ...) to find
-all professors associated with manufacturing at a given university. 
-Additionally, the sections kword in fill can be used to get only the data we are interested in. 
-This means calculating the h-index by hand is uneeded
-'''
-
-'''
-Use a search string including manufacturing OR ... instead of names.txt
-
-Need to go to a given university, and for all professors in that university, 
-check if they have published papers relating to manufacturing, and if they have,
-retrive the h-index 
-
 Make an option to search via keyword
+Make an option to specify universities
 Use LLM to make additional search terms after user puts in their own
 '''
 
