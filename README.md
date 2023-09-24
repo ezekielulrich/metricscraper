@@ -19,7 +19,7 @@ This Python program allows you to retrieve and compile the h-index of researcher
 You can install the required libraries using `pip`:
 
 ```bash
-pip install pandas scholarly re
+pip install pandas scholarly
 ```
 
 ## Installation
