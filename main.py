@@ -8,7 +8,13 @@ This will have to be what we do, since manualy checking affiliation incorrectly 
 
 from scholarly import scholarly
 import pandas as pd
-import re
+
+def savefile(results):
+    #save as csv
+    print('Saving to metrics.csv')
+    df = pd.DataFrame(results)
+    df.to_csv('metrics.csv', index=False)
+    print('Saved to metrics.csv')
 
 def have_common_elements(list1, list2):
     set1 = set(list1)
@@ -16,29 +22,7 @@ def have_common_elements(list1, list2):
     common_elements = set1.intersection(set2)
     return len(common_elements) > 0
 
-
-def get_affiliation(input_string):
-    if re.match(r".*mit\.edu$", input_string, re.IGNORECASE):
-        return 'MIT'
-    elif re.match(r".*umich\.edu$", input_string, re.IGNORECASE):
-        return "UMichigan"
-    elif re.match(r".*gatech\.edu$", input_string, re.IGNORECASE):
-        return "Georgia Tech"
-    elif re.match(r".*illinois\.edu$", input_string, re.IGNORECASE):
-        return "UIUC"
-    elif re.match(r".*stanford\.edu$", input_string, re.IGNORECASE):
-        return "Stanford"
-    elif re.match(r".*northwestern\.edu$", input_string, re.IGNORECASE):
-        return "Northwestern"
-    else:
-        return "Other"
-
 def main():
-    # debug
-    '''
-    author_result = next(scholarly.search_author('np suh'))
-    print(author_result)
-    '''
     
     print('Running...')
 
@@ -67,41 +51,41 @@ def main():
     IDs = [scholarly.search_org(uni)[0]['id'] for uni in universities]
     authors = []
     results = []
+    savectr = 100
 
     # get all authors associated with keywords from a university
 
     print('Retrieving authors...')
 
-    for ID in IDs:
+    for ID, university in zip(IDs, universities):
         try:
             query = scholarly.search_author_by_organization(int(ID))
             while True:
                 author = next(query)
                 print(f"Checking if {author['name']} is associated with keywords")
                 if have_common_elements(author['interests'], keywords):
-                    authors.append(author['name'])
-                    print(f"Added {author['name']} to list of names")
+                    authors.append({'name' : author['name'], 'uni' : university})
+                    print(f"Added {author['name']} and {university} to list of authors")
         except:
             print("Done searching authors")
     
     # get metrics and append to results
-
     for author_name in authors:
-        print(f"Searching for {author_name} metrics")
+        print(f"Searching for {author_name['name']} metrics")
         try:
-            author_result = next(scholarly.search_author(author_name))
+            author_result = next(scholarly.search_author(author['name']))
             author = scholarly.fill(author_result, sections=['basics', 'indices'])
-            print({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
-            results.append({'Author': author['name'], 'Affiliation': get_affiliation(author['email_domain']), 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+            print({'Author': author_name['name'], 'Affiliation': author_name['uni'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+            results.append({'Author': author_name['name'], 'Affiliation': author_name['uni'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
+            savectr -= 1
+            if not savectr:
+                savefile(results)
+                savectr = 100
         except:
-            print(f"Something went wrong searching for {author_name}")
+            print(f"Something went wrong searching for {author['name']}")
             pass
     
-    #save as csv
-    print('Saving to metrics.csv')
-    df = pd.DataFrame(results)
-    df.to_csv('metrics.csv', index=False)
-    print('Saved to metrics.csv')
+    savefile(results)
 
 if __name__ == "__main__":
     main()

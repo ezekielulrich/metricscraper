@@ -15,7 +15,6 @@ This Python program allows you to retrieve and compile the h-index of researcher
 - Python 3.x
 - `pandas` library
 - `scholarly` library
-- `re` library
 
 You can install the required libraries using `pip`:
 
@@ -45,7 +44,7 @@ cd metricscraper
 python main.py
 ```
 
-The program will search Google Scholar for authors from each university whose interests are associated with manufacturing and retrieve their corresponding h-index, university, and citation count. These results are compiled into a .csv file and can be visualized as a box plot by running 
+The program will search Google Scholar for authors from each university whose interests are associated with manufacturing and retrieve their corresponding h-index and citation count. These results are compiled into a .csv file and can be visualized as a box plot by running 
 ```bash
 python graph.py
 ```
