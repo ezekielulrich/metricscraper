@@ -65,7 +65,7 @@ def main():
                 print(f"Checking if {author['name']} is associated with keywords")
                 if have_common_elements(author['interests'], keywords):
                     authors.append({'name' : author['name'], 'uni' : university})
-                    print(f"Added {author['name']} and {university} to list of authors")
+                    print(f"Added {author['name']} and {university} to list")
         except:
             print("Done searching authors")
     
@@ -73,7 +73,7 @@ def main():
     for author_name in authors:
         print(f"Searching for {author_name['name']} metrics")
         try:
-            author_result = next(scholarly.search_author(author['name']))
+            author_result = next(scholarly.search_author(author_name['name']))
             author = scholarly.fill(author_result, sections=['basics', 'indices'])
             print({'Author': author_name['name'], 'Affiliation': author_name['uni'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
             results.append({'Author': author_name['name'], 'Affiliation': author_name['uni'], 'Citations' : author['citedby'], 'H-index': author["hindex"]})
