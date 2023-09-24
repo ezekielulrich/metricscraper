@@ -20,21 +20,21 @@ Michael P. Short,MIT,2674,30
 Cullen Buie,MIT,2465,24
 Wei Yan,MIT,12300,62
 Yiwei Li 李一伟,MIT,1483,20
-Victor Li,University of Michigan,52183,125
-Wei D. Lu,University of Michigan,38387,89
-Neil P. Dasgupta,University of Michigan,9143,41
-Jan P Stegemann,University of Michigan,6951,43
-Andrew Ault,University of Michigan,6365,48
-Anna Shenderova Schwendeman,University of Michigan,6360,38
-Liang Qi (齐亮),University of Michigan,6182,33
-Ariella Shikanov,University of Michigan,3564,34
-Mario Fabiilli,University of Michigan,2372,23
-Wenda Tan,University of Michigan,2321,20
-"Loebel Claudia, MD PhD",University of Michigan,1534,17
-Ghassan Kridli,University of Michigan,1186,19
-Aaron H. Morris,University of Michigan,731,15
-Christopher Pannier,University of Michigan,252,10
-Xiaojia Wang,University of Michigan,2407,26
+Victor Li,UMichigan,52183,125
+Wei D. Lu,UMichigan,38387,89
+Neil P. Dasgupta,UMichigan,9143,41
+Jan P Stegemann,UMichigan,6951,43
+Andrew Ault,UMichigan,6365,48
+Anna Shenderova Schwendeman,UMichigan,6360,38
+Liang Qi (齐亮),UMichigan,6182,33
+Ariella Shikanov,UMichigan,3564,34
+Mario Fabiilli,UMichigan,2372,23
+Wenda Tan,UMichigan,2321,20
+"Loebel Claudia, MD PhD",UMichigan,1534,17
+Ghassan Kridli,UMichigan,1186,19
+Aaron H. Morris,UMichigan,731,15
+Christopher Pannier,UMichigan,252,10
+Xiaojia Wang,UMichigan,2407,26
 Mostafa A. El-Sayed,Georgia Tech,150740,143
 Walt A de Heer,Georgia Tech,80838,97
 David Rosen,Georgia Tech,28355,68
@@ -55,20 +55,20 @@ Leslie Chan,Georgia Tech,2027,20
 Sourabh Saha,Georgia Tech,13284,55
 "Mohamed Aly Saad Aly, Ph.D.",Georgia Tech,690,9
 Sathya Gourisankar,Georgia Tech,534,6
-Scott R. White,University of Illinois at Urbana-Champaign,47061,98
-Joseph W. Lyding,University of Illinois at Urbana-Champaign,12678,57
-Brendan Harley,University of Illinois at Urbana-Champaign,11375,51
-Minjoo Larry Lee,University of Illinois at Urbana-Champaign,8620,45
-Jean-Pierre Leburton,University of Illinois at Urbana-Champaign,7677,47
-Lili Cai,University of Illinois at Urbana-Champaign,6981,27
-"Yun-Sheng Chen, Ph.D.",University of Illinois at Urbana-Champaign,3291,24
-Shaloo Rakheja,University of Illinois at Urbana-Champaign,1526,22
-Holly McIlwee Golecki,University of Illinois at Urbana-Champaign,1465,15
-Sara Pedron Haba,University of Illinois at Urbana-Champaign,1401,17
-Ahmed Ettaf Elbanna,University of Illinois at Urbana-Champaign,965,19
-Marie-Agathe Charpagne,University of Illinois at Urbana-Champaign,650,15
-Vishal Sachdev,University of Illinois at Urbana-Champaign,427,10
-Andrey Mironov,University of Illinois at Urbana-Champaign,7465,37
+Scott R. White,Illinois,47061,98
+Joseph W. Lyding,Illinois,12678,57
+Brendan Harley,Illinois,11375,51
+Minjoo Larry Lee,Illinois,8620,45
+Jean-Pierre Leburton,Illinois,7677,47
+Lili Cai,Illinois,6981,27
+"Yun-Sheng Chen, Ph.D.",Illinois,3291,24
+Shaloo Rakheja,Illinois,1526,22
+Holly McIlwee Golecki,Illinois,1465,15
+Sara Pedron Haba,Illinois,1401,17
+Ahmed Ettaf Elbanna,Illinois,965,19
+Marie-Agathe Charpagne,Illinois,650,15
+Vishal Sachdev,Illinois,427,10
+Andrey Mironov,Illinois,7465,37
 Hongjie Dai,Stanford,242646,209
 Shanhui Fan,Stanford,109446,161
 H.-S. Philip Wong,Stanford,65509,123
@@ -89,20 +89,20 @@ Wei Li,Stanford,186702,204
 Raag Airan,Stanford,5392,26
 Andrew J. Mannix,Stanford,4798,17
 Eon Soo Lee,Stanford,2835,26
-Chad Mirkin,Northwestern University,189212,196
-Milan Mrksich,Northwestern University,44095,101
-Teri W. Odom,Northwestern University,27212,73
-Koray AYDIN,Northwestern University,13125,49
-Bin Chen,Northwestern University,21617,82
-Ryan L. Truby,Northwestern University,9702,20
-Sinan Keten,Northwestern University,8090,50
-"Tao Sun, T. Sun",Northwestern University,7180,46
-Gajendra Shekhawat,Northwestern University,4392,33
-Nikos Hardavellas,Northwestern University,4200,26
-Dayne F. Swearer,Northwestern University,3003,18
-"Evan Alexander Scott, Ph.D.",Northwestern University,2790,31
-Arash Dehzangi,Northwestern University,2038,26
-Ian McCue,Northwestern University,1629,15
-Neha P. Kamat,Northwestern University,1613,20
-Kathleen Stair,Northwestern University,630,10
-Nathan T. La Porte,Northwestern University,433,10
+Chad Mirkin,Northwestern,189212,196
+Milan Mrksich,Northwestern,44095,101
+Teri W. Odom,Northwestern,27212,73
+Koray AYDIN,Northwestern,13125,49
+Bin Chen,Northwestern,21617,82
+Ryan L. Truby,Northwestern,9702,20
+Sinan Keten,Northwestern,8090,50
+"Tao Sun, T. Sun",Northwestern,7180,46
+Gajendra Shekhawat,Northwestern,4392,33
+Nikos Hardavellas,Northwestern,4200,26
+Dayne F. Swearer,Northwestern,3003,18
+"Evan Alexander Scott, Ph.D.",Northwestern,2790,31
+Arash Dehzangi,Northwestern,2038,26
+Ian McCue,Northwestern,1629,15
+Neha P. Kamat,Northwestern,1613,20
+Kathleen Stair,Northwestern,630,10
+Nathan T. La Porte,Northwestern,433,10
