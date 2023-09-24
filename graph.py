@@ -6,8 +6,8 @@ def graph():
     df = pd.read_csv('metrics.csv')
     print(df.head())
 
-    # by default, outliers are not included. This helps pretty the plot
-    sns.boxplot(x=df['Affiliation'], y=df['H-index'], showfliers=False) 
+    # by default, outliers should not be included. This helps pretty the plot
+    sns.boxplot(x=df['Affiliation'], y=df['H-index'], showfliers=True) 
     plt.xlabel('University')
     plt.ylabel('H-Index')
     plt.title('H-Index Distribution by University')
