@@ -16,7 +16,7 @@ def savefile(results):
     df.to_csv('metrics.csv', index=False)
     print('Saved to metrics.csv')
 
-def have_common_elements(list1, list2):
+def common(list1, list2):
     set1 = set(list1)
     set2 = set(list2)
     common_elements = set1.intersection(set2)
@@ -63,7 +63,7 @@ def main():
             while True:
                 author = next(query)
                 print(f"Checking if {author['name']} is associated with keywords")
-                if have_common_elements(author['interests'], keywords):
+                if common(author['interests'], keywords) and 'professor' in author['affiliation'].lower():
                     authors.append({'name' : author['name'], 'uni' : university})
                     print(f"Added {author['name']} and {university} to list")
         except:
@@ -80,7 +80,7 @@ def main():
             savectr -= 1
             if not savectr:
                 savefile(results)
-                savectr = 100
+                savectr = 50
         except:
             print(f"Something went wrong searching for {author['name']}")
             pass
