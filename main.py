@@ -63,7 +63,7 @@ def main():
             while True:
                 author = next(query)
                 print(f"Checking if {author['name']} is a professor and associated with keywords")
-                if common(author['interests'], keywords) and 'professor' in author['affiliation'].lower():
+                if common(author['interests'], keywords) and 'prof' in author['affiliation'].lower():
                     authors.append({'name' : author['name'], 'uni' : university})
                     print(f"Added {author['name']} and {university} to list")
         except:
