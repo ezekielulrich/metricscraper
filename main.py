@@ -41,7 +41,7 @@ def main():
         "nanotechnology", "biomimetic material", "smart material", "nanosensor", 
         "nanostructured polymers", "bioinspired materials", "metamaterials", 
         "nanoindentation", "nanorobotics", "nanotribology", "nanomechanics", 
-        "nanophotonics", "nanoelectronics", "microfluidics", "nanofluidics"
+        "nanophotonics", "nanoelectronics", "microfluidics", "nanofluidics", "manufacturing"
     ]
     keycaps = [keyword.capitalize() for keyword in keywords]
     keywords = keywords + keycaps
@@ -51,7 +51,7 @@ def main():
     IDs = [scholarly.search_org(uni)[0]['id'] for uni in universities]
     authors = []
     results = []
-    savectr = 100
+    savectr = 50
 
     # get all authors associated with keywords from a university
 
