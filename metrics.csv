@@ -1,108 +1,95 @@
 Author,Affiliation,Citations,H-index
-Robert Langer,MIT,402543,316
-Marin Soljacic,MIT,97578,181
-Ju Li (ORCID:0000-0002-7841-8058),MIT,67661,132
-np suh,MIT,39357,85
-Ioannis V. Yannas,MIT,26362,81
-Patrick S. Doyle,MIT,23129,79
-Karl K. Berggren,MIT,20037,74
-Rohit Karnik,MIT,16984,59
-Linn W. Hobbs,MIT,10649,51
-Adnan Memić,MIT,10098,40
-Joel Voldman,MIT,10044,47
-Kwanghun Chung,MIT,8478,38
-James LeBeau,MIT,7785,40
-deblina sarkar,MIT,6502,27
-Benedetto Marelli,MIT,5645,41
-Kevin P. O'Brien,MIT,4674,20
-Kent Zheng,MIT,9186,48
-Michael P. Short,MIT,2674,30
-Cullen Buie,MIT,2465,24
-Wei Yan,MIT,12300,62
-Yiwei Li 李一伟,MIT,1483,20
-Victor Li,UMichigan,52183,125
-Wei D. Lu,UMichigan,38387,89
-Neil P. Dasgupta,UMichigan,9143,41
-Jan P Stegemann,UMichigan,6951,43
-Andrew Ault,UMichigan,6365,48
-Anna Shenderova Schwendeman,UMichigan,6360,38
-Liang Qi (齐亮),UMichigan,6182,33
-Ariella Shikanov,UMichigan,3564,34
-Mario Fabiilli,UMichigan,2372,23
-Wenda Tan,UMichigan,2321,20
-"Loebel Claudia, MD PhD",UMichigan,1534,17
-Ghassan Kridli,UMichigan,1186,19
-Aaron H. Morris,UMichigan,731,15
-Christopher Pannier,UMichigan,252,10
-Xiaojia Wang,UMichigan,2407,26
-Mostafa A. El-Sayed,Georgia Tech,150740,143
-Walt A de Heer,Georgia Tech,80838,97
-David Rosen,Georgia Tech,28355,68
-Scott J Hollister,Georgia Tech,27535,82
-Min-Feng Yu,Georgia Tech,19430,45
-James Gole,Georgia Tech,46863,111
-Suman Das,Georgia Tech,17066,60
-W. Hong Yeo,Georgia Tech,9843,40
-Xing XIE（谢兴）,Georgia Tech,9188,35
-Ankur Singh,Georgia Tech,7193,41
-Arun Gokhale,Georgia Tech,6327,48
-Azad Naeemi,Georgia Tech,6102,35
-Susan Napier Thomas,Georgia Tech,4610,30
-Michael Filler,Georgia Tech,3754,28
-Russell Gentry,Georgia Tech,2428,24
-Chengzhi Shi,Georgia Tech,1840,16
-Leslie Chan,Georgia Tech,2027,20
-Sourabh Saha,Georgia Tech,13284,55
-"Mohamed Aly Saad Aly, Ph.D.",Georgia Tech,690,9
-Sathya Gourisankar,Georgia Tech,534,6
-Scott R. White,Illinois,47061,98
-Joseph W. Lyding,Illinois,12678,57
-Brendan Harley,Illinois,11375,51
-Minjoo Larry Lee,Illinois,8620,45
-Jean-Pierre Leburton,Illinois,7677,47
-Lili Cai,Illinois,6981,27
-"Yun-Sheng Chen, Ph.D.",Illinois,3291,24
-Shaloo Rakheja,Illinois,1526,22
-Holly McIlwee Golecki,Illinois,1465,15
-Sara Pedron Haba,Illinois,1401,17
-Ahmed Ettaf Elbanna,Illinois,965,19
-Marie-Agathe Charpagne,Illinois,650,15
-Vishal Sachdev,Illinois,427,10
-Andrey Mironov,Illinois,7465,37
-Hongjie Dai,Stanford,242646,209
-Shanhui Fan,Stanford,109446,161
-H.-S. Philip Wong,Stanford,65509,123
-"James S. Harris, Jr.",Stanford,64479,112
-Juan G. Santiago,Stanford,33058,86
-Eric Pop,Stanford,32501,88
-Nicholas Melosh,Stanford,26165,58
-David Goldhaber-Gordon,Stanford,19378,57
-H. Tom Soh,Stanford,17618,74
-Olav Solgaard,Stanford,15591,65
-Jonathan A. Fan,Stanford,15495,62
-Sarah Heilshorn,Stanford,14970,64
-Eric A. Appel,Stanford,10565,45
-Fan Yang,Stanford,20911,69
-Sindy KY Tang,Stanford,8005,35
-Turgut M. Gür,Stanford,7995,43
-Wei Li,Stanford,186702,204
-Raag Airan,Stanford,5392,26
-Andrew J. Mannix,Stanford,4798,17
-Eon Soo Lee,Stanford,2835,26
-Chad Mirkin,Northwestern,189212,196
-Milan Mrksich,Northwestern,44095,101
-Teri W. Odom,Northwestern,27212,73
-Koray AYDIN,Northwestern,13125,49
-Bin Chen,Northwestern,21617,82
-Ryan L. Truby,Northwestern,9702,20
-Sinan Keten,Northwestern,8090,50
-"Tao Sun, T. Sun",Northwestern,7180,46
-Gajendra Shekhawat,Northwestern,4392,33
-Nikos Hardavellas,Northwestern,4200,26
-Dayne F. Swearer,Northwestern,3003,18
-"Evan Alexander Scott, Ph.D.",Northwestern,2790,31
-Arash Dehzangi,Northwestern,2038,26
-Ian McCue,Northwestern,1629,15
-Neha P. Kamat,Northwestern,1613,20
-Kathleen Stair,Northwestern,630,10
-Nathan T. La Porte,Northwestern,433,10
+Robert Langer,MIT,402845,316
+Marin Soljacic,MIT,97659,181
+Ju Li (ORCID:0000-0002-7841-8058),MIT,67760,132
+np suh,MIT,39366,85
+Ioannis V. Yannas,MIT,26374,81
+Patrick S. Doyle,MIT,23145,79
+Karl K. Berggren,MIT,20043,74
+Sanjay Sarma,MIT,55756,96
+Rohit Karnik,MIT,16998,59
+Linn W. Hobbs,MIT,10653,51
+Adnan Memić,MIT,10118,41
+Joel Voldman,MIT,10050,47
+Kwanghun Chung,MIT,8488,38
+James LeBeau,MIT,7793,40
+deblina sarkar,MIT,6509,27
+Benedetto Marelli,MIT,5649,41
+Kevin P. O'Brien,MIT,4682,20
+Kent Zheng,MIT,9194,48
+Michael P. Short,MIT,2677,30
+Cullen Buie,MIT,2468,24
+Wei Yan,MIT,12307,62
+Yiwei Li 李一伟,MIT,1486,20
+Victor Li,University of Michigan,52301,125
+Wei D. Lu,University of Michigan,38430,89
+Wallace Hopp,University of Michigan,16668,53
+Dawn Tilbury,University of Michigan,13691,53
+Neil P. Dasgupta,University of Michigan,9169,42
+Steven Skerlos,University of Michigan,7424,43
+Jan P Stegemann,University of Michigan,6959,43
+Andrew Ault,University of Michigan,6383,48
+Anna Shenderova Schwendeman,University of Michigan,6370,38
+Liang Qi (齐亮),University of Michigan,6186,33
+Ariella Shikanov,University of Michigan,3575,34
+Mario Fabiilli,University of Michigan,2375,23
+Wenda Tan,University of Michigan,2325,20
+"Loebel Claudia, MD PhD",University of Michigan,1536,17
+Ghassan Kridli,University of Michigan,1188,19
+Wes Mcgee,University of Michigan,1088,16
+Aaron H. Morris,University of Michigan,734,15
+Scott R. White,University of Illinois at Urbana-Champaign,47072,98
+Joseph W. Lyding,University of Illinois at Urbana-Champaign,12683,57
+Brendan Harley,University of Illinois at Urbana-Champaign,11381,51
+Minjoo Larry Lee,University of Illinois at Urbana-Champaign,8624,45
+Jean-Pierre Leburton,University of Illinois at Urbana-Champaign,7679,47
+Lili Cai,University of Illinois at Urbana-Champaign,6989,27
+"Yun-Sheng Chen, Ph.D.",University of Illinois at Urbana-Champaign,3292,24
+Shaloo Rakheja,University of Illinois at Urbana-Champaign,1530,22
+Holly McIlwee Golecki,University of Illinois at Urbana-Champaign,1466,15
+Sara Pedron Haba,University of Illinois at Urbana-Champaign,1401,17
+Chenhui Shao,University of Illinois at Urbana-Champaign,1309,21
+Ahmed Ettaf Elbanna,University of Illinois at Urbana-Champaign,965,19
+Marie-Agathe Charpagne,University of Illinois at Urbana-Champaign,652,15
+Vishal Sachdev,University of Illinois at Urbana-Champaign,428,10
+Andrey Mironov,University of Illinois at Urbana-Champaign,7470,37
+Hongjie Dai,Stanford,242797,209
+Shanhui Fan,Stanford,109564,161
+H.-S. Philip Wong,Stanford,65580,123
+"James S. Harris, Jr.",Stanford,64504,112
+Juan G. Santiago,Stanford,33067,86
+Eric Pop,Stanford,32553,88
+Nicholas Melosh,Stanford,26174,58
+David Goldhaber-Gordon,Stanford,19383,57
+H. Tom Soh,Stanford,17656,74
+Olav Solgaard,Stanford,15597,65
+Jonathan A. Fan,Stanford,15519,62
+Sarah Heilshorn,Stanford,14981,64
+Jayakumar Rajadas,Stanford,12485,58
+Eric A. Appel,Stanford,10587,45
+Fan Yang,Stanford,20942,69
+Sindy KY Tang,Stanford,8014,35
+Turgut M. Gür,Stanford,8005,43
+Wei Li,Stanford,186775,204
+Raag Airan,Stanford,5396,26
+Andrew J. Mannix,Stanford,4810,17
+Eon Soo Lee,Stanford,2837,26
+Chad Mirkin,Northwestern University,189308,196
+Milan Mrksich,Northwestern University,44122,101
+Teri W. Odom,Northwestern University,27238,73
+Koray AYDIN,Northwestern University,13138,49
+Bin Chen,Northwestern University,21645,82
+Ryan L. Truby,Northwestern University,9711,20
+Sinan Keten,Northwestern University,8103,51
+"Tao Sun, T. Sun",Northwestern University,7217,46
+Gajendra Shekhawat,Northwestern University,4397,33
+Nikos Hardavellas,Northwestern University,4201,26
+Dayne F. Swearer,Northwestern University,3005,18
+"Evan Alexander Scott, Ph.D.",Northwestern University,2795,31
+Ping Guo,Northwestern University,24999,77
+Arash Dehzangi,Northwestern University,2040,26
+Ian McCue,Northwestern University,1633,15
+Neha P. Kamat,Northwestern University,1615,20
+Kathleen Stair,Northwestern University,630,10
+Nathan T. La Porte,Northwestern University,434,10
+Cécile AC Chazot,Northwestern University,171,6
