@@ -2,8 +2,6 @@
 Make an option to search via keyword
 Make an option to specify universities
 Use LLM to make additional search terms after user puts in their own
-Need to find a way to select only professors and associate professors - in affiliation, check if affiliation contains substring "professor"
-This will have to be what we do, since manualy checking affiliation incorrectly eliminates some results
 '''
 
 from scholarly import scholarly
